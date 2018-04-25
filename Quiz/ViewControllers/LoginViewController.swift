@@ -53,8 +53,8 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
     }
     func gradient() {
         //Add the gradiant to the view:
-        self.gradiant.frame = self.view.bounds
-        self.view.layer.addSublayer(gradiant)
+//        self.gradiant.frame = self.view.bounds
+//        self.view.layer.addSublayer(gradiant)
     }
     
     override func didReceiveMemoryWarning() {

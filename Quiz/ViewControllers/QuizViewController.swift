@@ -61,10 +61,14 @@ class QuizViewController: UIViewController {
             timerBar.progress = Float(seconds) / 10
         }
     }
+    
     func nextQuestion(){
         self.timer.invalidate()
         if index == 9 {
-            self.performSegue(withIdentifier: "toResult", sender: nil)
+            if let discoveryVC = ((self.presentingViewController as? UINavigationController)?.childViewControllers.last as? DiscoveryViewController) {
+                discoveryVC.quizManager = self.quizManager
+            }
+            dismiss(animated: true, completion: nil)
         }
         else{
             UIView.animate(withDuration: 0.5, delay: 0.5, options: UIViewAnimationOptions.curveEaseOut, animations: {
@@ -130,6 +134,7 @@ extension QuizViewController: UITableViewDelegate, UITableViewDataSource {
 class QuizManager {
     var incorrectQuestion: [(Question, String)]!
     var questions: [Question] = [Question]()
+    var otherScore: (Int, Int)?
     
     init(questions: [Question]) {
         self.questions = questions

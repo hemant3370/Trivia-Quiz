@@ -85,8 +85,9 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as! QuizViewController
+        if segue.identifier == "toQuiz", let dest = segue.destination as? DiscoveryViewController {
         dest.questions = sender as! [Question]
+        }
     }
 }
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

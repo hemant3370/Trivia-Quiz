@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aCE-l7-rCM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aCE-l7-rCM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Noteworthy.ttc">
-            <string>Noteworthy-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="ejK-V7-SE6">
@@ -41,7 +37,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FB8-ns-3Mn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1210" y="134"/>
+            <point key="canvasLocation" x="-1602" y="133"/>
         </scene>
         <!--Login-->
         <scene sceneID="hWQ-SS-JXj">
@@ -57,10 +53,24 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c51-Tq-H3y">
+                                <rect key="frame" x="32" y="539" width="311" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                <state key="normal" title="SKIP">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="t37-tH-4W4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="c51-Tq-H3y" firstAttribute="leading" secondItem="6n1-rz-vqB" secondAttribute="leading" constant="32" id="A7u-jz-n8L"/>
                             <constraint firstItem="j9k-cE-M9m" firstAttribute="top" secondItem="6n1-rz-vqB" secondAttribute="top" constant="66" id="T63-Cd-6hC"/>
+                            <constraint firstItem="6n1-rz-vqB" firstAttribute="trailing" secondItem="c51-Tq-H3y" secondAttribute="trailing" constant="32" id="W3Z-mF-S7G"/>
+                            <constraint firstItem="6n1-rz-vqB" firstAttribute="bottom" secondItem="c51-Tq-H3y" secondAttribute="bottom" constant="20" id="lDg-H0-Hfk"/>
                             <constraint firstItem="j9k-cE-M9m" firstAttribute="centerX" secondItem="cCz-uv-EjU" secondAttribute="centerX" id="qeo-2O-cwK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6n1-rz-vqB"/>
@@ -74,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Van-9a-XwU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-545" y="139"/>
+            <point key="canvasLocation" x="-796" y="134"/>
         </scene>
         <!--Categories-->
         <scene sceneID="tne-QT-ifu">
@@ -120,26 +130,67 @@
                     </view>
                     <navigationItem key="navigationItem" title="Categories" prompt="Quiz Mania" id="bbZ-Jn-Cn5">
                         <barButtonItem key="backBarButtonItem" title="Quit" id="p3s-Sh-0Ph"/>
+                        <barButtonItem key="rightBarButtonItem" title="Join" id="x8S-nW-bpg">
+                            <connections>
+                                <segue destination="PQ7-3q-h0L" kind="show" identifier="toJoin" id="axj-vW-mqk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="3El-fh-KhX" id="o3o-TM-VeT"/>
-                        <segue destination="i8B-Tf-ElY" kind="show" identifier="toQuiz" id="HgL-jh-6O3"/>
+                        <segue destination="PQ7-3q-h0L" kind="show" identifier="toQuiz" id="Qe9-1Z-CMc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="47" y="134"/>
+        </scene>
+        <!--Discovery View Controller-->
+        <scene sceneID="7ey-B2-UFv">
+            <objects>
+                <viewController id="PQ7-3q-h0L" customClass="DiscoveryViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="biu-4G-WtY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="LfH-EJ-W5B">
+                                <rect key="frame" x="177.5" y="291.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for other player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K30-iu-oLL">
+                                <rect key="frame" x="98" y="323.5" width="178.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="K30-iu-oLL" firstAttribute="top" secondItem="LfH-EJ-W5B" secondAttribute="bottom" constant="12" id="5qf-O9-Skq"/>
+                            <constraint firstItem="LfH-EJ-W5B" firstAttribute="centerY" secondItem="biu-4G-WtY" secondAttribute="centerY" id="EsU-VQ-9Lc"/>
+                            <constraint firstItem="LfH-EJ-W5B" firstAttribute="centerX" secondItem="biu-4G-WtY" secondAttribute="centerX" id="bdJ-sT-TA8"/>
+                            <constraint firstItem="K30-iu-oLL" firstAttribute="centerX" secondItem="biu-4G-WtY" secondAttribute="centerX" id="tfK-ng-2U4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="in0-t5-Sh1"/>
+                    </view>
+                    <connections>
+                        <segue destination="i8B-Tf-ElY" kind="presentation" identifier="playQuiz" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="8S5-AW-Ytv"/>
+                        <segue destination="Q28-3g-4kl" kind="show" identifier="toResult" id="de9-Wj-FBp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B99-ug-K5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="746" y="133"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="5NT-2o-FJC">
             <objects>
                 <viewController id="i8B-Tf-ElY" customClass="QuizViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qCp-vl-48c">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QhW-1s-ctU">
-                                <rect key="frame" x="16" y="28" width="343" height="567"/>
+                                <rect key="frame" x="16" y="48" width="343" height="611"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="i8B-Tf-ElY" id="exv-7h-4wG"/>
@@ -147,7 +198,7 @@
                                 </connections>
                             </tableView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="Rpq-lj-McZ" customClass="TimerView" customModule="Quiz" customModuleProvider="target">
-                                <rect key="frame" x="16" y="13" width="343" height="2"/>
+                                <rect key="frame" x="16" y="33" width="343" height="2"/>
                             </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -165,12 +216,11 @@
                     <connections>
                         <outlet property="optionsTableView" destination="QhW-1s-ctU" id="w0c-nl-Pov"/>
                         <outlet property="timerBar" destination="Rpq-lj-McZ" id="jiM-Sa-D8k"/>
-                        <segue destination="Q28-3g-4kl" kind="show" identifier="toResult" id="6bP-hk-LRw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTv-cq-riL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="861.60000000000002" y="132.68365817091455"/>
+            <point key="canvasLocation" x="1513" y="-219"/>
         </scene>
         <!--Result-->
         <scene sceneID="hkp-Bq-iJd">
@@ -188,45 +238,83 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="psc-ax-mqh" kind="unwind" unwindAction="unwindToCategoriesViewControllerWithSegue:" id="abZ-VO-EZT"/>
+                                    <segue destination="psc-ax-mqh" kind="unwind" unwindAction="unwindToCategoriesViewControllerWithSegue:" id="TAh-oF-PI0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1M-Nq-EYk">
-                                <rect key="frame" x="10" y="10" width="355" height="27.5"/>
+                                <rect key="frame" x="10" y="116" width="355" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZDe-u2-vz8">
-                                <rect key="frame" x="16" y="149.5" width="343" height="2"/>
+                                <rect key="frame" x="16" y="255.5" width="343" height="2"/>
                                 <color key="progressTintColor" red="0.1612759081" green="0.67919178300000005" blue="0.14517994719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="trackTintColor" red="1" green="0.0" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xT-LK-A0t">
-                                <rect key="frame" x="16" y="53.5" width="343" height="80"/>
+                                <rect key="frame" x="16" y="159.5" width="343" height="80"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="His Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sft-ds-JNI">
+                                <rect key="frame" x="16" y="282.5" width="355" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="N3E-p1-y1C">
+                                <rect key="frame" x="22" y="421.5" width="343" height="2"/>
+                                <color key="progressTintColor" red="0.1612759081" green="0.67919178300000005" blue="0.14517994719999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="trackTintColor" red="1" green="0.0" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04R-5C-MvG">
+                                <rect key="frame" x="22" y="325.5" width="343" height="80"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAG-fE-p9X">
+                                <rect key="frame" x="40" y="10" width="294.5" height="96"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="60"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="u1M-Nq-EYk" firstAttribute="top" secondItem="NuB-qc-Yz1" secondAttribute="top" constant="10" id="2M6-Xc-OIk"/>
+                            <constraint firstItem="u1M-Nq-EYk" firstAttribute="top" secondItem="BAG-fE-p9X" secondAttribute="bottom" constant="10" id="2zJ-0m-K8J"/>
                             <constraint firstItem="NuB-qc-Yz1" firstAttribute="trailing" secondItem="9xT-LK-A0t" secondAttribute="trailing" constant="16" id="3CY-bI-svX"/>
                             <constraint firstItem="NuB-qc-Yz1" firstAttribute="trailing" secondItem="HKz-T0-qMH" secondAttribute="trailing" constant="20" id="3Gm-IE-MPZ"/>
+                            <constraint firstItem="04R-5C-MvG" firstAttribute="top" secondItem="Sft-ds-JNI" secondAttribute="bottom" constant="16" id="3bP-SX-fPm"/>
                             <constraint firstItem="9xT-LK-A0t" firstAttribute="top" secondItem="u1M-Nq-EYk" secondAttribute="bottom" constant="16" id="7A5-Tq-AUu"/>
+                            <constraint firstItem="NuB-qc-Yz1" firstAttribute="trailing" secondItem="04R-5C-MvG" secondAttribute="trailing" constant="10" id="8cn-By-Vz3"/>
                             <constraint firstItem="NuB-qc-Yz1" firstAttribute="bottom" secondItem="HKz-T0-qMH" secondAttribute="bottom" constant="20" id="8wp-Tr-ADd"/>
+                            <constraint firstItem="NuB-qc-Yz1" firstAttribute="trailing" secondItem="Sft-ds-JNI" secondAttribute="trailing" constant="4" id="AqM-le-Gu9"/>
+                            <constraint firstItem="N3E-p1-y1C" firstAttribute="leading" secondItem="bof-go-x1L" secondAttribute="leading" constant="22" id="DKf-UN-2WT"/>
                             <constraint firstItem="NuB-qc-Yz1" firstAttribute="trailing" secondItem="u1M-Nq-EYk" secondAttribute="trailing" constant="10" id="GrK-C2-kDz"/>
                             <constraint firstAttribute="trailing" secondItem="ZDe-u2-vz8" secondAttribute="trailing" constant="16" id="Hhk-uw-Mn2"/>
+                            <constraint firstItem="Sft-ds-JNI" firstAttribute="top" secondItem="ZDe-u2-vz8" secondAttribute="bottom" constant="25" id="KUk-sX-jpe"/>
+                            <constraint firstItem="Sft-ds-JNI" firstAttribute="leading" secondItem="NuB-qc-Yz1" secondAttribute="leading" constant="16" id="R43-e3-6I6"/>
+                            <constraint firstItem="BAG-fE-p9X" firstAttribute="top" secondItem="NuB-qc-Yz1" secondAttribute="top" constant="10" id="TQ9-e1-U0a"/>
                             <constraint firstItem="ZDe-u2-vz8" firstAttribute="leading" secondItem="bof-go-x1L" secondAttribute="leading" constant="16" id="agb-Sq-zYe"/>
+                            <constraint firstItem="BAG-fE-p9X" firstAttribute="centerX" secondItem="bof-go-x1L" secondAttribute="centerX" id="bG5-72-nEf"/>
                             <constraint firstItem="ZDe-u2-vz8" firstAttribute="top" secondItem="9xT-LK-A0t" secondAttribute="bottom" constant="16" id="duZ-pk-c0n"/>
                             <constraint firstItem="HKz-T0-qMH" firstAttribute="leading" secondItem="NuB-qc-Yz1" secondAttribute="leading" constant="20" id="erL-KP-mMy"/>
+                            <constraint firstItem="N3E-p1-y1C" firstAttribute="top" secondItem="04R-5C-MvG" secondAttribute="bottom" constant="16" id="i30-4e-ZPy"/>
+                            <constraint firstAttribute="trailing" secondItem="N3E-p1-y1C" secondAttribute="trailing" constant="10" id="kKs-WE-DoT"/>
+                            <constraint firstItem="04R-5C-MvG" firstAttribute="leading" secondItem="NuB-qc-Yz1" secondAttribute="leading" constant="22" id="o1Q-Bb-7wX"/>
                             <constraint firstItem="9xT-LK-A0t" firstAttribute="leading" secondItem="NuB-qc-Yz1" secondAttribute="leading" constant="16" id="oek-X4-CHh"/>
                             <constraint firstItem="u1M-Nq-EYk" firstAttribute="leading" secondItem="NuB-qc-Yz1" secondAttribute="leading" constant="10" id="p34-D7-pFM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NuB-qc-Yz1"/>
                     </view>
                     <connections>
+                        <outlet property="otherPlayerNameLabel" destination="Sft-ds-JNI" id="dpm-tc-rgc"/>
+                        <outlet property="otherScoreBar" destination="N3E-p1-y1C" id="ZVQ-s2-UPt"/>
+                        <outlet property="otherScoreLabel" destination="04R-5C-MvG" id="Pto-qw-sb0"/>
+                        <outlet property="resultLabel" destination="BAG-fE-p9X" id="A9d-zd-8SQ"/>
                         <outlet property="scoreBar" destination="ZDe-u2-vz8" id="J8a-gW-aKl"/>
                         <outlet property="scoreLabel" destination="9xT-LK-A0t" id="WWz-ew-cgU"/>
                     </connections>
@@ -234,7 +322,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0Z-0r-HqQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="psc-ax-mqh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1687.2" y="134.48275862068968"/>
+            <point key="canvasLocation" x="1514" y="500"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Qe9-1Z-CMc"/>
+        <segue reference="t37-tH-4W4"/>
+    </inferredMetricsTieBreakers>
 </document>
