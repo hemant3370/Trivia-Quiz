@@ -49,6 +49,7 @@
 		54B3FCA320626C13005A7791 /* OptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54B3FCA120626C13005A7791 /* OptionCell.xib */; };
 		54B3FCA520626F5A005A7791 /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B3FCA420626F5A005A7791 /* Shuffle.swift */; };
 		54D39FF4206CDFCB004D6D5C /* WebCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D39FF3206CDFCB004D6D5C /* WebCalls.swift */; };
+		54D6C97A20876F34005D1636 /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D6C97920876F34005D1636 /* DiscoveryViewController.swift */; };
 		54DD642F20650B310019FA10 /* DialogLoaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54DD642D20650B300019FA10 /* DialogLoaderViewController.xib */; };
 		54DD643020650B310019FA10 /* DialogLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DD642E20650B310019FA10 /* DialogLoaderViewController.swift */; };
 		54DD643320650B7D0019FA10 /* VCExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DD643220650B7D0019FA10 /* VCExt.swift */; };
@@ -124,6 +125,7 @@
 		54B3FCA120626C13005A7791 /* OptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionCell.xib; sourceTree = "<group>"; };
 		54B3FCA420626F5A005A7791 /* Shuffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shuffle.swift; sourceTree = "<group>"; };
 		54D39FF3206CDFCB004D6D5C /* WebCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCalls.swift; sourceTree = "<group>"; };
+		54D6C97920876F34005D1636 /* DiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
 		54DD642D20650B300019FA10 /* DialogLoaderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DialogLoaderViewController.xib; sourceTree = "<group>"; };
 		54DD642E20650B310019FA10 /* DialogLoaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogLoaderViewController.swift; sourceTree = "<group>"; };
 		54DD643220650B7D0019FA10 /* VCExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCExt.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				54B3FC9D20626898005A7791 /* QuizViewController.swift */,
 				544A0B182068F6A4005DFFA3 /* ResultViewController.swift */,
 				54550674206A754600CED59D /* LoginViewController.swift */,
+				54D6C97920876F34005D1636 /* DiscoveryViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				54B300B52063E1D0005A7791 /* LoaderPlugin.swift in Sources */,
 				542A8379206C10740009AC17 /* CardView.swift in Sources */,
 				544A0B192068F6A4005DFFA3 /* ResultViewController.swift in Sources */,
+				54D6C97A20876F34005D1636 /* DiscoveryViewController.swift in Sources */,
 				54B300B32063E1D0005A7791 /* TVAPI.swift in Sources */,
 				547B648920618C5C00011C52 /* Quiz.xcdatamodeld in Sources */,
 				5414FDE5206256E1004452BF /* NibLoading.swift in Sources */,
@@ -872,7 +876,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 635454HKAN;
 				INFOPLIST_FILE = Quiz/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Hemant.Quiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -889,7 +893,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 635454HKAN;
 				INFOPLIST_FILE = Quiz/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Hemant.Quiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
